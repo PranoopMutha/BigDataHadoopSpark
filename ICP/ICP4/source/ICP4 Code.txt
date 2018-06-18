@@ -3,23 +3,28 @@ USECASE-1
 
 Creating a table with name Table01 and adding a column family Location which contains country, state and city columns
 
-> create 'Table01', 'Location'
+>	create 'UC1', 'Locations'
 
 
-> put 'Table01', '1', 'Location:country' ,'USA'
-> put 'Table01', '1', 'Location:state' , 'Kansas'
-> put 'Table01', '1', 'Location:City', 'Kansas City'
-> put 'Table01', '2', 'Location:country' ,'USA'
-> put 'Table01', '2', 'Location:state' , 'Missouri'
-> put 'Table01', '2', 'Location:City', 'Kansas City'
-> put 'Table01', '3', 'Location:country' ,'India'
-> put 'Table01', '3', 'Location:state' , 'Andhra Pradesh'
-> put 'Table01', '3', 'Location:City', 'Vizag'
+>	put ' UC1', '1', 'Locations:country' ,'India'
+>	put ' UC1', '1', 'Locations:state' , 'Telangana'
+>	put 'UC1', '1', 'Locations:City', 'Hyderabad’
+>	put 'UC1', '2', 'Locations:country' ,'USA'
+>	put 'UC1', '2', 'Locations:state' , 'Missouri'
+>	put 'UC1', '2', 'Locations:City', 'Kansas City'
+>	put 'UC1', '3', 'Locations:country' ,'China'
+>	put 'UC1', '3', 'Locations:state' , 'Shejdan'
+>	put 'UC1', '3', 'Locations:City', 'Hong Kong'
+>	put 'UC1', '3', 'Locations:country' ,'China'
+>	put 'UC1', '3', 'Locations:state' , 'Shejdan'
+>	put 'UC1', '3', 'Locations:City', 'Juipan'
 
-scan 'Table1'
-describe 'Table01'
-count 'Table01'
-get 'Table01','1'
+
+scan 'UC1'
+describe 'UC1'
+count 'UC1'
+get 'UC1','1'
+
 
 
 USECASE-2
@@ -27,61 +32,64 @@ USECASE-2
 
 Creating a table with name Table2 and adding a column family Student and Courses which contains Student details and courses enrolled by each student
 
-> create 'Table2','Student', 'Courses'
+>	create 'UC2','Students', 'Courses'
 
-> put 'Table2', '1', 'Student:Name','Sridevi'
-> put 'Table2', '1', 'Student:SEX', 'Female'
-> put 'Table2', '1', 'Student:AGE', '24'
-> put 'Table2', '2', 'Student:Name','Pranoop'
-> put 'Table2', '2', 'Student:SEX', 'Male'
-> put 'Table2', '2', 'Student:AGE', '20'
-> put 'Table2', '3', 'Student:Name','Pragathi'
-> put 'Table2', '3', 'Student:SEX', 'Female'
-> put 'Table2', '3', 'Student:AGE', '20'
+>	put 'UC2', '1', 'Students:Name','Walter'
+>	put 'UC2', '1', 'Students:SEX', 'Male'
+>	put 'UC2', '1', 'Students:AGE', '24'
+>	put 'UC2', '2', 'Students:Name','Pranoop'
+>	put 'UC2', '2', 'Students:SEX', 'Male'
+>	put 'UC2', '2', 'Students:AGE', '20'
+>	put 'UC2', '3', 'Students:Name','Vinay'
+>	put 'UC2', '3', 'Students:SEX', 'Male'
+>	put 'UC2', '3', 'Students:AGE', '23'
+ 
 
+put 'UC2', '1', 'Courses: Course1','ISL'
+put 'UC2', '1', 'Courses: Course2', 'Big Data'
+put 'UC2', '2', 'Courses: Course1','Python'
+put 'UC2', '2', 'Courses: Course2', 'ASE'
+put 'UC2', '3', 'Courses: Course1','Big Data'
+put 'UC2', '3', 'Courses: Course2', 'ISL'
 
-
-put 'Table2', '1', 'Courses:Course1','ISL'
-put 'Table2', '1', 'Courses:Course2', 'Big Data'
-put 'Table2', '2', 'Courses:Course1','Python'
-put 'Table2', '2', 'Courses:Course2', 'ASE'
-put 'Table2', '3', 'Courses:Course1','Big Data'
-put 'Table2', '3', 'Courses:Course2', 'ISL'
-
-scan 'Table2'
-describe 'Table2'
-count 'Table2'
-get 'Table2','2' 
+scan 'UC2'
+describe 'UC2'
+count 'UC2'
+get 'UC2','2'
 
 
 Creating a table with name Table2b and adding a column family CourseInfo and Student which contains Course details and Students enrolled in each course
 
-> create 'Table2b','CourseInfo', 'Student'
 
-> put 'Table2b', '1', 'CourseInfo:Title','ISL'
-> put 'Table2b', '1', 'CourseInfo:Intro', 'Statistical Learning'
-> put 'Table2b', '1', 'CourseInfo:Teacher', 'Deep Medhi'
-> put 'Table2b', '2', 'CourseInfo:Title','Python'
-> put 'Table2b', '2', 'CourseInfo:Intro', 'Deep Learning'
-> put 'Table2b', '2', 'CourseInfo:Teacher', 'Lee'
-> put 'Table2b', '3', 'CourseInfo:Title','Big Data'
-> put 'Table2b', '3', 'CourseInfo:Intro', 'Hadoop and spark'
-> put 'Table2b', '3', 'CourseInfo:Teacher', 'Lee'
+>   create 'UC2b','CourseInfo', 'Students'
+
+>	put 'UC2b', '1', 'CourseInfo: Title', 'ISL'
+>	put 'UC2b', '1', 'CourseInfo: Intro', 'Statistical Learning'
+>	put 'UC2b', '1', 'CourseInfo: Teacher', 'Deep Medhi'
+>	put 'UC2b', '2', 'CourseInfo: Title', 'Python'
+>	put 'UC2b', '2', 'CourseInfo: Intro', 'Deep Learning'
+>	put 'UC2b', '2', 'CourseInfo: Teacher', 'Lee'
+>	put 'UC2b', '3', 'CourseInfo: Title', 'Big Data'
+>	put 'UC2b', '3', 'CourseInfo: Intro', 'Hadoop and spark'
+>	put 'UC2b', '3', 'CourseInfo: Teacher', 'Mayanka'
 
 
-put 'Table2b', '1', 'Student:Stu1','Sridevi'
-put 'Table2b', '1', 'Student:Stu2', 'Vardhini'
-put 'Table2b', '1', 'Student:Stu3', 'Pragathi'
-put 'Table2b', '2', 'Student:Stu1','Srilu'
-put 'Table2b', '2', 'Student:Stu2', 'Sanjana'
-put 'Table2b', '2', 'Student:Stu3', 'Pranoop'
-put 'Table2b', '3', 'Student:Stu1','Lalitha'
-put 'Table2b', '3', 'Student:Stu2', 'Vardhini'
-put 'Table2b', '3', 'Student:Stu3', 'Sridevi'
+put 'UC2b', '1', 'Students: Stu1','Walter'
+put 'UC2b', '1', 'Students: Stu2', 'Vinay'
+put 'UC2b', '1', 'Students: Stu3', 'Pragathi'
+put 'UC2b', '2', 'Students: Stu1','Srilu'
+put 'UC2b', '2', 'Students: Stu2', 'Sanjana'
+put 'UC2b', '2', 'Students: Stu3', 'Pranoop'
+put 'UC2b', '3', 'Students: Stu1','Lalitha'
 
-scan 'Table2b'
-count 'Table2b'
-get 'Table2b','2'
+put 'UC2b', '3', 'Students: Stu2', 'Vinay'
+put 'UC2b', '3', 'Students: Stu3', 'Sridevi'
+
+scan 'UC2b'
+count 'UC2b'
+get 'UC2b','2'
+
+
 
 
 
@@ -89,51 +97,53 @@ USECASE -3
 
 Creating a table with name Table3 and adding a column family UserDetails and EventDetails
 
-create 'Table3','UserDetails', 'EventDetails'
+create 'UC3','UserDetails', 'EventDetails'
 
-> put 'Table3', '1', 'UserDetails:UserID','111'
-> put 'Table3', '1', 'UserDetails:Name', 'Sridevi'
-> put 'Table3', '2', 'UserDetails:UserID','222'
-> put 'Table3', '2', 'UserDetails:Name', 'Pragathi'
-> put 'Table3', '3', 'UserDetails:UserID','333'
-> put 'Table3', '3', 'UserDetails:Name', 'Pranoop'
+> put 'UC3', '1', 'UserDetails:UserID','8'
+ 
+>	put 'UC3', '1', 'UserDetails:Name', 'Walter'
+>	put 'UC3', '2', 'UserDetails:UserID','23'
+>	put 'UC3', '2', 'UserDetails:Name', 'Ashish'
+>	put 'UC3', '3', 'UserDetails:UserID','14'
+>	put 'UC3', '3', 'UserDetails:Name', 'Pranoop'
 
-> put 'Table3', '1', 'EventDetails:EventID','001'
-> put 'Table3', '1', 'EventDetails:Time', '11:00:00'
-> put 'Table3', '2', 'EventDetails:EventID','002'
-> put 'Table3', '2', 'EventDetails:Time', '12:00:00'
-> put 'Table3', '3', 'EventDetails:EventID','003'
-> put 'Table3', '3', 'EventDetails:Time', '15:00:00'
+>	put 'UC3', '1', 'EventDetails:EventID','001'
+>	put 'UC3', '1', 'EventDetails:Time', '11:00:00'
+>	put 'UC3', '2', 'EventDetails:EventID','002'
+>	put 'UC3', '2', 'EventDetails:Time', '12:00:00'
+>	put 'UC3', '3', 'EventDetails:EventID','003'
+>	put 'UC3', '3', 'EventDetails:Time', '15:00:00'
 
-scan 'Table3'
-count 'Table3'
-get 'Table3','2'
-
+scan 'UC3'
+count 'UC3'
+get 'UC3','2'
 
 
 USECASE-4
 
 Creating a table with name Table3 and adding a column family User and Friends
 
-create 'Table4','User', 'Friends'
+create 'UC4','User', 'Friends'
 
-> put 'Table4', '1', 'User:UserID','111'
-> put 'Table4', '1', 'User:Name','Sridevi'
-> put 'Table4', '2', 'User:UserID','222'
-> put 'Table4', '2', 'User:Name','Pragathi'
-> put 'Table4', '3', 'User:UserID','333'
-> put 'Table4', '3', 'User:Name','Pranoop'
+>	put 'UC4', '1', 'User:UserID','8'
+>	put 'UC4', '1', 'User:Name','Walter'
+>	put 'UC4', '2', 'User:UserID','23'
+>	put 'UC4', '2', 'User:Name','Praveen'
+>	put 'UC4', '3', 'User:UserID','14'
+>	put 'UC4', '3', 'User:Name','Pranoop'
 
-> put 'Table4', '1', 'Friends:ID','001'
-> put 'Table4', '1', 'Friends:Name','Srilu'
-> put 'Table4', '2', 'Friends:ID','002'
-> put 'Table4', '2', 'Friends:Name','Lalitha'
-> put 'Table4', '3', 'Friends:ID','003'
-> put 'Table4', '3', 'Friends:Name','vardhini'
+>	put 'UC4', '1', 'Friends:ID','001'
+>	put 'UC4', '1', 'Friends:Name','Ashu'
+>	put 'UC4', '2', 'Friends:ID','002'
+>	put 'UC4', '2', 'Friends:Name','Vinay'
+>	put 'UC4', '3', 'Friends:ID','003'
+>	put 'UC4', '3', 'Friends:Name','Tanmayee'
 
-scan 'Table4'
-count 'Table4'
-get 'Table4','2'
+scan 'UC4'
+count 'UC4'
+get 'UC4','2'
+ 
+
 
 
 USECASE-5
@@ -142,23 +152,29 @@ Creating a table with name Table3 and adding a column family http and User
 
 create 'Table5','http','User'
 
-> put 'Table5', '1', 'http:IP','11.111.11.1'
-> put 'Table5', '1', 'http:Domain', 'Sridevi'
-> put 'Table5', '2', 'http:IP','22.222.22.2'
-> put 'Table5', '2', 'http:Domain', 'Pragathi'
-> put 'Table5', '3', 'http:IP','33.333.33.3'
-> put 'Table5', '3', 'http:Domain', 'Pranoop'
+create 'UC5','http','User'
 
-> put 'Table5', '1', 'User:UserID','111'
-> put 'Table5', '1', 'User:Name', 'Lalitha'
-> put 'Table5', '2', 'User:UserID','222'
-> put 'Table5', '2', 'User:Name', 'Vardhini'
-> put 'Table5', '3', 'User:UserID','333'
-> put 'Table4', '3', 'User:Name', 'Srilu'
+>	put 'UC5', '1', 'http:IP','11.111.11.1'
+>	put 'UC5', '1', 'http:Domain', 'Sri'
+ 
+>	put 'UC5', '2', 'http:IP','22.222.22.2'
+>	put 'UC5', '2', 'http:Domain', 'Praneeth'
+>	put 'UC5', '3', 'http:IP','33.333.33.3'
 
-scan 'Table5'
-count 'Table5'
-get 'Table5','2'
+>	put 'UC5', '3', 'http:Domain', 'Pranoop'
+
+>	put 'UC5', '1', 'User:UserID','11'
+>	put 'UC5', '1', 'User:Name', 'Lalli'
+>	put 'UC5', '2', 'User:UserID','22'
+>	put 'UC5', '2', 'User:Name', 'Varsh'
+>	put 'UC5', '3', 'User:UserID','33'
+>	put 'UC4', '3', 'User:Name', 'Srilekha'
+
+scan 'UC5'
+
+count 'UC5'
+get 'UC5','2'
+
 
 
 
@@ -175,18 +191,25 @@ a. General HBase shell commands
 	hbase> whoami
 
 b. Tables Management commands
+describe 'UC1'
 
-	describe 'Table01'
-	describe 'Table3' 	
-	disable 'Table01'
-	disable 'Table3'
+describe 'UC3'
+
+disable 'UC1'
+
+disable 'UC3'
+
 
 c. Data Manipulation commands  
 
-	count 'Table01'
-	count 'Table3'
-	get 'Table01', 'Sridevi'
-	get 'Table3', 'Pragathi'
+count 'UC1'
+
+count 'UC3'
+
+get 'UC1', 'Vinay'
+
+get 'UC3', 'Pranoop'
+
 
 d. HBase surgery tools
 
