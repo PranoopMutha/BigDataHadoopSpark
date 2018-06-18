@@ -1,0 +1,204 @@
+
+USECASE-1
+
+Creating a table with name Table01 and adding a column family Location which contains country, state and city columns
+
+> create 'Table01', 'Location'
+
+
+> put 'Table01', '1', 'Location:country' ,'USA'
+> put 'Table01', '1', 'Location:state' , 'Kansas'
+> put 'Table01', '1', 'Location:City', 'Kansas City'
+> put 'Table01', '2', 'Location:country' ,'USA'
+> put 'Table01', '2', 'Location:state' , 'Missouri'
+> put 'Table01', '2', 'Location:City', 'Kansas City'
+> put 'Table01', '3', 'Location:country' ,'India'
+> put 'Table01', '3', 'Location:state' , 'Andhra Pradesh'
+> put 'Table01', '3', 'Location:City', 'Vizag'
+
+scan 'Table1'
+describe 'Table01'
+count 'Table01'
+get 'Table01','1'
+
+
+USECASE-2
+
+
+Creating a table with name Table2 and adding a column family Student and Courses which contains Student details and courses enrolled by each student
+
+> create 'Table2','Student', 'Courses'
+
+> put 'Table2', '1', 'Student:Name','Sridevi'
+> put 'Table2', '1', 'Student:SEX', 'Female'
+> put 'Table2', '1', 'Student:AGE', '24'
+> put 'Table2', '2', 'Student:Name','Pranoop'
+> put 'Table2', '2', 'Student:SEX', 'Male'
+> put 'Table2', '2', 'Student:AGE', '20'
+> put 'Table2', '3', 'Student:Name','Pragathi'
+> put 'Table2', '3', 'Student:SEX', 'Female'
+> put 'Table2', '3', 'Student:AGE', '20'
+
+
+
+put 'Table2', '1', 'Courses:Course1','ISL'
+put 'Table2', '1', 'Courses:Course2', 'Big Data'
+put 'Table2', '2', 'Courses:Course1','Python'
+put 'Table2', '2', 'Courses:Course2', 'ASE'
+put 'Table2', '3', 'Courses:Course1','Big Data'
+put 'Table2', '3', 'Courses:Course2', 'ISL'
+
+scan 'Table2'
+describe 'Table2'
+count 'Table2'
+get 'Table2','2' 
+
+
+Creating a table with name Table2b and adding a column family CourseInfo and Student which contains Course details and Students enrolled in each course
+
+> create 'Table2b','CourseInfo', 'Student'
+
+> put 'Table2b', '1', 'CourseInfo:Title','ISL'
+> put 'Table2b', '1', 'CourseInfo:Intro', 'Statistical Learning'
+> put 'Table2b', '1', 'CourseInfo:Teacher', 'Deep Medhi'
+> put 'Table2b', '2', 'CourseInfo:Title','Python'
+> put 'Table2b', '2', 'CourseInfo:Intro', 'Deep Learning'
+> put 'Table2b', '2', 'CourseInfo:Teacher', 'Lee'
+> put 'Table2b', '3', 'CourseInfo:Title','Big Data'
+> put 'Table2b', '3', 'CourseInfo:Intro', 'Hadoop and spark'
+> put 'Table2b', '3', 'CourseInfo:Teacher', 'Lee'
+
+
+put 'Table2b', '1', 'Student:Stu1','Sridevi'
+put 'Table2b', '1', 'Student:Stu2', 'Vardhini'
+put 'Table2b', '1', 'Student:Stu3', 'Pragathi'
+put 'Table2b', '2', 'Student:Stu1','Srilu'
+put 'Table2b', '2', 'Student:Stu2', 'Sanjana'
+put 'Table2b', '2', 'Student:Stu3', 'Pranoop'
+put 'Table2b', '3', 'Student:Stu1','Lalitha'
+put 'Table2b', '3', 'Student:Stu2', 'Vardhini'
+put 'Table2b', '3', 'Student:Stu3', 'Sridevi'
+
+scan 'Table2b'
+count 'Table2b'
+get 'Table2b','2'
+
+
+
+USECASE -3
+
+Creating a table with name Table3 and adding a column family UserDetails and EventDetails
+
+create 'Table3','UserDetails', 'EventDetails'
+
+> put 'Table3', '1', 'UserDetails:UserID','111'
+> put 'Table3', '1', 'UserDetails:Name', 'Sridevi'
+> put 'Table3', '2', 'UserDetails:UserID','222'
+> put 'Table3', '2', 'UserDetails:Name', 'Pragathi'
+> put 'Table3', '3', 'UserDetails:UserID','333'
+> put 'Table3', '3', 'UserDetails:Name', 'Pranoop'
+
+> put 'Table3', '1', 'EventDetails:EventID','001'
+> put 'Table3', '1', 'EventDetails:Time', '11:00:00'
+> put 'Table3', '2', 'EventDetails:EventID','002'
+> put 'Table3', '2', 'EventDetails:Time', '12:00:00'
+> put 'Table3', '3', 'EventDetails:EventID','003'
+> put 'Table3', '3', 'EventDetails:Time', '15:00:00'
+
+scan 'Table3'
+count 'Table3'
+get 'Table3','2'
+
+
+
+USECASE-4
+
+Creating a table with name Table3 and adding a column family User and Friends
+
+create 'Table4','User', 'Friends'
+
+> put 'Table4', '1', 'User:UserID','111'
+> put 'Table4', '1', 'User:Name','Sridevi'
+> put 'Table4', '2', 'User:UserID','222'
+> put 'Table4', '2', 'User:Name','Pragathi'
+> put 'Table4', '3', 'User:UserID','333'
+> put 'Table4', '3', 'User:Name','Pranoop'
+
+> put 'Table4', '1', 'Friends:ID','001'
+> put 'Table4', '1', 'Friends:Name','Srilu'
+> put 'Table4', '2', 'Friends:ID','002'
+> put 'Table4', '2', 'Friends:Name','Lalitha'
+> put 'Table4', '3', 'Friends:ID','003'
+> put 'Table4', '3', 'Friends:Name','vardhini'
+
+scan 'Table4'
+count 'Table4'
+get 'Table4','2'
+
+
+USECASE-5
+
+Creating a table with name Table3 and adding a column family http and User
+
+create 'Table5','http','User'
+
+> put 'Table5', '1', 'http:IP','11.111.11.1'
+> put 'Table5', '1', 'http:Domain', 'Sridevi'
+> put 'Table5', '2', 'http:IP','22.222.22.2'
+> put 'Table5', '2', 'http:Domain', 'Pragathi'
+> put 'Table5', '3', 'http:IP','33.333.33.3'
+> put 'Table5', '3', 'http:Domain', 'Pranoop'
+
+> put 'Table5', '1', 'User:UserID','111'
+> put 'Table5', '1', 'User:Name', 'Lalitha'
+> put 'Table5', '2', 'User:UserID','222'
+> put 'Table5', '2', 'User:Name', 'Vardhini'
+> put 'Table5', '3', 'User:UserID','333'
+> put 'Table4', '3', 'User:Name', 'Srilu'
+
+scan 'Table5'
+count 'Table5'
+get 'Table5','2'
+
+
+
+Question 2:
+
+
+a. General HBase shell commands 
+
+	hbase> status
+	hbase> status ‘simple’
+	hase> status ‘summary’
+	hbase> status ‘detailed’
+	hbase> version
+	hbase> whoami
+
+b. Tables Management commands
+
+	describe 'Table01'
+	describe 'Table3' 	
+	disable 'Table01'
+	disable 'Table3'
+
+c. Data Manipulation commands  
+
+	count 'Table01'
+	count 'Table3'
+	get 'Table01', 'Sridevi'
+	get 'Table3', 'Pragathi'
+
+d. HBase surgery tools
+
+	balancer
+	balance_switch true
+	balance_switch false
+
+
+
+
+
+
+
+
+
