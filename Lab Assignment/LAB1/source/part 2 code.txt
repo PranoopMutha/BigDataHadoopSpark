@@ -1,0 +1,91 @@
+create keyspace courseera with replication={'class':'SimpleStrategy','replication_factor':1};
+cqlsh> use courseera;
+
+// Creating the table with required 
+
+create table if not exists course_details (
+learner_id int PRIMARY KEY,
+course_id int,
+course_name  text,
+course_duartion int,
+tutor_name text);
+
+
+
+create table if not exists student_details (
+user_id int PRIMARY KEY,
+user_name text);
+
+INSERT into coursera.student_details(user_id,user_name)values (1,'Jack');
+INSERT into coursera.student_details(user_id,user_name)values (2,'Sam');
+
+
+create table if not exists coursera_details (
+course_id int,
+user_id int,
+course_name  text,
+course_duartion int,
+PRIMARY KEY (course_id, user_id)
+);
+
+INSERT into coursera.coursera_details(course_id,user_id,course_name,course_duartion)values (5590,1,'Bigdata',6);
+INSERT into coursera.coursera_details(course_id,user_id,course_name,course_duartion)values (5596,2,'Python',6);
+
+
+create table if not exists tutor_details (
+user_id int,
+course_id int,
+tutor_id int,
+tutor_name text,
+PRIMARY KEY (tutor_id, course_id)
+);
+
+
+INSERT into coursera.tutor_details(tutor_id,course_id,user_id,tutor_name)values (14,5590,1,'Mayanka');
+INSERT into coursera.tutor_details(tutor_id,course_id,user_id,tutor_name)values (23,5596,2,'Lee');
+
+
+// Insert commands
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (10,100,'PDC',6,'Jack');
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (20,200,'ASE',7,'Jim');
+
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (30,300,'ISL',2,'Medhi');
+
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (40,400,'CC',6,'Bill');
+
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (50,500,'KDM',6,'Roy');
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (60,600,'NA1',4,'Lee');
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (70,400,'CC',8,'Lee');
+
+INSERT into courseera.course_details(learner_id,course_id,course_name,course_duartion,tutor_name)values (80,300,'ISL',8,'Medhi');
+
+
+
+
+Query - 1 (UPDATE DATA)
+
+//Update statement for updating the course details FROM course_duartion -2 ,course_name Statstical Learning TO 5 and Introduction to Statstical Learning
+
+Update courseera.course_details set course_duartion =5 ,course_name='Stat Intro' where learner_id=30;
+Update courseera.course_details set course_duartion =5 ,course_name='Stat Intro' where learner_id=80;
+
+
+Query - 2 (SELECT DATA)
+
+// Select statement for reading the data with filtering 
+
+select tutor_name from courseera.course_details where course_name='CC' ALLOW FILTERING;
+
+
+Query - 3(DELETE DATA)
+
+// Deleting the data from the table
+
+DELETE from courseera.course_details where learner_id = 20;
